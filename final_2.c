@@ -1,17 +1,19 @@
 #include <stdio.h>
 int main()
 {
-    int n,i;
-    scanf("%d",&n);
-    int point[n];
-    if(n>=2 && n<=1000)
+    int N,i;
+    scanf("%d",&N);
+    int point[N];
+    if(N>=2 && N<=1000)
 {
-       for(i=0;i<n;i++)
+       for(i=0;i<N;i++)
     {
         scanf("%d",&point[i]);
+        if(point[i]<1 || point[i]>10000)
+            break;
     }
     int max=point[0],posi=1,count=0;
-    for(i=0;i<n;i++)
+    for(i=0;i<N;i++)
     {
        if(max<point[i])
        {
@@ -24,7 +26,7 @@ int main()
     }
     if(count>1)
     {
-        for(i=0;i<n;i++)
+        for(i=0;i<N;i++)
      {
             if(max==point[i])
                 printf("%d ",i+1);

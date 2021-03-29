@@ -1,18 +1,20 @@
 #include <stdio.h>
 int main()
 {
-    int k,n,ck,i;
-    scanf("%d",&k);
+    int k,n,c,ck;
     scanf("%d",&n);
-    if(k>n && n<10)
+    scanf("%d",&c);
+    if((n>0 && n<32750) && c<10)
     {
-        while(i<32750)
+        k=n;
+        while(k)
         {
             k++;
-            if(k%10==n)
+            if(k%10==c)
                 break;
         }
-        printf("%d",k);
+        if(k>n)
+        printf(" %d",k);
     }
     return 0;
 }

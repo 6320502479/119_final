@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    int N,i;
+    int N,i,j;
     scanf("%d",&N);
     int point[N];
     if(N>=2 && N<=1000)
@@ -12,26 +13,31 @@ int main()
         if(point[i]<1 || point[i]>10000)
             break;
     }
-    int max=point[0],posi=1,count=0;
+    int max,count[N],cou=0;
     for(i=0;i<N;i++)
     {
-       if(max<point[i])
-       {
-           max=point[i];
-           posi=i+1;
-           count=0;
-       }
-       if(max==point[i])
-            count++;
+        max=point[i];
+        for(j=0;j<N;j++)
+        {
+            if(max==point[j])
+            {
+                cou++;
+            }
+        }
+        count[i]=cou;
+        cou=0;
     }
-    if(count>1)
+    int max2=0,c=0,c2=1;
+    for(i=0;i<N;i++)
     {
-        for(i=0;i<N;i++)
-            if(max==point[i])
-                break;
-                printf("%d %d",i+1,max);
+        if(max2<count[i])
+            max2=count[i];
+        if(max2==count[i])
+        {
+            break;
+        }
     }
-    else
-        printf("%d",max);
+    printf("%d",point[max2]);
+
 }
 }

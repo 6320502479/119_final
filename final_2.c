@@ -4,7 +4,9 @@ int main()
     int n,i;
     scanf("%d",&n);
     int point[n];
-    for(i=0;i<n;i++)
+    if(n>=2 && n<=1000)
+{
+       for(i=0;i<n;i++)
     {
         scanf("%d",&point[i]);
     }
@@ -20,15 +22,15 @@ int main()
        if(max==point[i])
             count++;
     }
-if(count>1)
-{
-     for(i=0;i<n;i++)
+    if(count>1)
+    {
+        for(i=0;i<n;i++)
      {
-         if(max==point[i])
-            printf("%d ",i+1);
+            if(max==point[i])
+                printf("%d ",i+1);
      }
+    }
+    else
+        printf("%d",posi);
 }
-else
-    printf("%d",posi);
-
 }

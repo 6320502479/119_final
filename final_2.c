@@ -27,12 +27,11 @@ int main()
     if(count>1)
     {
         for(i=0;i<N;i++)
-     {
             if(max==point[i])
-                printf("%d ",i+1);
-     }
+                break;
+                printf("%d %d",i+1,max);
     }
     else
-        printf("%d",posi);
+        printf("%d",max);
 }
 }
